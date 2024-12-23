@@ -33,20 +33,6 @@ $this->params['breadcrumbs'][] = $this->title;
                          class="product-image" />
                 <?php endforeach; ?>
             </div>
-
-            <div class="variants">
-                <h3>Variants:</h3>
-                    <?php foreach ($product['variants']['edges'] as $variant): ?>
-                <p><strong>Variant Title:</strong> <?= Html::encode($variant['node']['title']) ?></p>
-                <p><strong>Price:</strong> $<?= Html::encode($variant['node']['price']) ?></p>
-                <p><strong>Available for Sale:</strong> <?= $variant['node']['availableForSale'] ? 'Yes' : 'No' ?></p>
-                <p><strong>Options:</strong>
-                        <?php foreach ($variant['node']['selectedOptions'] as $option): ?>
-                    <br><?= Html::encode($option['name']) ?>: <?= Html::encode($option['value']) ?>
-                                                              <?php endforeach; ?>
-                </p>
-                <?php endforeach; ?>
-            </div>
         </div>
         <?php endforeach; ?>
     </div>
